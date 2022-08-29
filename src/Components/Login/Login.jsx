@@ -15,6 +15,7 @@ function Login() {
     password: password, 
     }).then((result)=> {
     setUser(result.data)
+    window.location.reload()
     console.log(result.data)
     })
     setPassword('');
@@ -22,13 +23,13 @@ function Login() {
   }
 
 
-   useEffect(() => {
-    Axios.get(`${url}/api/getall`).then((result)=>{
-      console.log(result.data.data);
-    }).catch((err)=>{
-      console.log(err)
-    })
-  }, []);
+//    useEffect(() => {
+//     Axios.get(`${url}/api/getall`).then((result)=>{
+//       console.log(result.data.data);
+//     }).catch((err)=>{
+//       console.log(err)
+//     })
+//   }, []);
 
    Axios.defaults.withCredentials = true; 
 

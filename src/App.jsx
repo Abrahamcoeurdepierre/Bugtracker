@@ -3,26 +3,24 @@ import url from './apiUrl';
 import Axios from "axios";
 import Login from './Components/Login/Login';
 import "./Style/Style.css"
+import NavBar from './Components/NavBar/NavBar';
+import Dashboard from './Components/Dashboard/Dashboard';
 
 function App() {
+  const [user, setUser] = useState();
 
-  // const [name, setName] = useState("");
-  // const [names, setNames] = useState([]);
-  
+  useEffect(() => {
+      Axios.get(`${url}/api/login`).then((result)=>{
+        if(result.data.user){
+          setUser(result.data.user)
+        }
 
-  // const [username, setUsername] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
+    }).catch((err)=>{
+      console.log(err.message)
+    })
+  }, []);
 
-  // const [user, setUser] = useState([]);
-
-
-  // const [usernameReg, setUsernameReg] = useState('');
-  // const [emailReg, setEmailReg] = useState('');
-  // const [passwordReg, setPasswordReg] = useState('');
-
-
-  // Axios.defaults.withCredentials = true; 
+  console.log(user)
 
   // const add = (e) => {
   //   e.preventDefault();
@@ -45,29 +43,6 @@ function App() {
   //   })
   // }, []);
 
-  // useEffect(() => {
-  //   Axios.get(`${url}/api/login`).then((result)=>{
-  //     console.log(result)
-  //   }).catch((err)=>{
-  //     console.log(err)
-  //   })
-  // }, []);
-
-
-  // const login = (e) => {
-  //   e.preventDefault();
-  //   Axios.post(`${url}/api/login`, {
-  //     username: username,
-  //     password: password, 
-  //     email: email
-  //   }).then((result)=> {
-  //     setUser(result.data)
-  //     console.log(result.data)
-  //   })
-  //   setEmail("");
-  //   setPassword('');
-  //   setUsername('')
-  // }
 
 
   // const register = (e) => {
@@ -100,54 +75,22 @@ function App() {
   //   })
   // }
 
-
-  return (
-  //  <div>
-  //     <form onSubmit={add}>
-  //       Test Name:  <input type="text" value={name} onChange = {(e)=> {setName(e.target.value)}} />
-  //       <button type='submit'> ADD </button>
-  //     </form>
-  //     <h1>Login</h1>
-  //     <div>
-  //       Username: <input type="text" onChange={(e)=> setUsername(e.target.value)} value={username}/>
-  //       Email: <input type="email" onChange={(e)=> setEmail(e.target.value)} value={email}/>
-  //       Password: <input type="password" onChange={(e)=> setPassword(e.target.value)} value={password}/>
-  //       <button type='button' onClick={login}> Login </button>
-
-  //     </div>
-
-  //     <h1>Register</h1>
-  //     <div>
-  //       Username: <input type="text" onChange={(e)=> setUsernameReg(e.target.value)} value={usernameReg}/>
-  //       Email: <input type="email" onChange={(e)=> setEmailReg(e.target.value)} value={emailReg}/>
-  //       Password: <input type="password" onChange={(e)=> setPasswordReg(e.target.value)} value={passwordReg}/>
-  //       <button type='button' onClick={register}> Register </button>
-
-  //     </div>
-
-  //     {user.map(user => {
-  //       return (
-  //       <h1 key = {user.user_id} >{user.user_email}</h1>
-  //       )
-  //     })}
-
-  //     <h1>Add database</h1>
-  //     {names.map(name => {
-  //       return (
-  //         <div key={name.id}>{name.name}</div>
-  //       )
-  //     })}
-
-  //     <button onClick={logout} type="button">Logout</button>
-  //  </div>
-
-
-  <Login/>
-
-
-
-
-  );
+  if(user){
+    return(
+      <div className='background'>
+        <NavBar/>
+        <div className="container">
+          <Dashboard/>
+        </div>
+      </div>
+    )
+  }
+  else{
+    return (
+      <Login/>
+      );
+  }
+  
 }
 
 export default App;

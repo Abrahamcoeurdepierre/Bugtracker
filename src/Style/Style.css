@@ -5,6 +5,14 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.background{
+    background-color: #E2E2ED;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
 .flexCol{
     display: flex;
     flex-direction: column;
@@ -69,7 +77,7 @@ input:focus{
     outline-width: 0;
 }
 
-.login button{
+.login button, .logout{
     width: 100px;
     height: 50px;
     background-color: #FA9408;
@@ -84,3 +92,157 @@ input:focus{
 button:hover{
     background-color: #E64044;
 }
+
+
+/* Navigation bar */
+.navbar{
+    position: relative;
+    width: 15%;
+    height: 100vh;
+    background-color: #FFFEFF;
+    padding-top: 30px;
+}
+.navbar h3{
+    padding-left: 30px;
+    margin-bottom: 20px;
+    font-size: large;
+    font-weight: 600;
+}
+.navbar div:nth-child(2){
+    border-top: solid rgb(200, 200, 200) 1px;
+}
+.navbar div:last-child{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+}
+.navlink{
+    width: 100%;
+    height: 50px;
+    padding-left: 30px;
+    align-items: center;
+    border-bottom: solid rgb(200, 200, 200) 1px;
+    font-size: medium;
+    color: #8b8b8b;
+    cursor: pointer;
+}
+.navlink:hover{
+    background-color: #FA9408;
+    color:#FFFEFF;
+}
+
+.container{
+    width: 85%;
+    height: 100vh;
+    padding: 20px;
+}
+
+.currProjects{
+    width: 100%;
+    background-color: #FFFEFF;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+.shadow{
+    box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+}
+.projects{
+    margin-top: 20px;
+    width: 100%;
+    overflow-x: auto;
+}
+.projectCard{
+    flex: 0 0 300px;
+    height: 150px;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.projectCard div:nth-child(2){
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.projectCard:nth-of-type(4n+1){
+    background-color: #57B15C;
+}
+
+.projectCard:nth-of-type(4n+2){
+    background-color: #FA9408   ;
+}
+
+.projectCard:nth-of-type(4n+3){
+    background-color: #E64044;
+}
+
+.projectCard:nth-of-type(4n+4){
+    background-color: #1074EF;
+}
+
+
+
+/* Team Members */
+.teamFrag{
+    position: relative;
+    margin-top: 60px;
+}
+.team{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFEFF;
+    width: 500px;
+    height: 200px;
+}
+
+.title{
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    background-color: #1074EF;
+    top: -30px;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #FFFEFF;
+    font-size: large;
+    font-weight: 500;
+}
+
+.team .list{
+    width: 90%;
+    height: 140px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.member{
+    margin-top: 10px;
+}
+/* Scrollbar  */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+

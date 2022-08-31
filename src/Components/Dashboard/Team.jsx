@@ -2,9 +2,9 @@ import React from 'react'
 
 function Team() {
   return (
-    <div className='teamFrag'>
-        <div className='title'>TEAM MEMBERS</div>
-        <div className='team shadow'>
+    <div className='cardFrag'>
+        <div className='title titleTeam'>TEAM MEMBERS</div>
+        <div className='card shadow team'>
             <div className="list">
 
                 <div className="member">Fenohasina</div>

@@ -136,6 +136,7 @@ button:hover{
     width: 85%;
     height: 100vh;
     padding: 20px;
+    overflow-x: auto;
 }
 
 .currProjects{
@@ -188,26 +189,54 @@ button:hover{
 
 
 /* Team Members */
-.teamFrag{
+.cardFrag{
     position: relative;
     margin-top: 60px;
 }
-.team{
+.card{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #FFFEFF;
+    background-color: white;
+    color: black;
+}
+
+.profile{
+    width: 700px;
+    height: 200px;
+}
+
+.team{
     width: 500px;
     height: 200px;
+    
+}
+.urgent{
+    width: 700px;
+    height: 200px;
+    background-color: #29363E;
+    color: #FFFEFF;
+}
+
+.titleUrgent{
+    left: 200px;
+    background-color: #E64044;
+}
+.titleTeam{
+    left: 100px;
+    background-color: #1074EF;
+}
+
+.titleProfile{
+    left: 200px;
+    background-color: #57B15C;
 }
 
 .title{
     position: absolute;
     width: 300px;
     height: 50px;
-    background-color: #1074EF;
     top: -30px;
-    left: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -217,7 +246,7 @@ button:hover{
     font-weight: 500;
 }
 
-.team .list{
+.card .list{
     width: 90%;
     height: 140px;
     overflow: auto;
@@ -246,3 +275,12 @@ button:hover{
   background: #555;
 }
 
+.around{
+    justify-content: space-around;
+    width: 100%;
+}
+
+.dashboard{
+    align-items: center;
+    width: 100%;
+}
